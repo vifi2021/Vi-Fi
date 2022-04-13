@@ -77,5 +77,4 @@
   * run ZedMain.m
 
 
-Vi-Fi Dataset Link:
-  Comming soon
+Vi-Fi Dataset Link: https://sites.google.com/winlab.rutgers.edu/vi-fidataset/home
