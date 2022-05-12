@@ -56,7 +56,7 @@
   cd dataset_v52_better/
   python split_data_train_test.py
   cd ../v52/
-  python train_v50.py  [your_dir_to_save_the_model] --fold 1 --epoch 80 --dataset [your_dir_of_train_test_dataset]/train_test_shuf_split_v2/ --lr 0.001 --batchSize 32
+  python train_v52.py  [your_dir_to_save_the_model] --fold 1 --epoch [number of epoches] --dataset [your_dir_of_train_test_dataset]/train_test_shuf_split_v2/ --lr [learning rate] --batchSize [batch size]
   ```
   To test:
   ```bash
