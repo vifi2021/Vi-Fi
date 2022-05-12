@@ -1,5 +1,6 @@
-# Vi-Fi
-## IPSN'22 submission
+# Vi-Fi: Associating Moving Subjects across Vision and Wireless Sensors
+Full paper (accepted by IPSN'22): https://winlab.rutgers.edu/~hansiiii/papers/ViFi_Paper___IPSN_2022__Camera_Ready_.pdf
+Vi-Fi Dataset Link: https://sites.google.com/winlab.rutgers.edu/vi-fidataset/home
 
 ### Directory over view:
 * data_collection_preprocessing/:
@@ -9,11 +10,11 @@
 
 
 * Deep_Affinity_Learning/:
-  * dataset_v50_3fps/:
+  * dataset_v52_better/:
     * scripts of constructing data samples for deep affinity matrix training
     * scripts of spliting training and testing set
 
-  * v50/:
+  * v52/:
     * scripts of model architecture
     * scripts of training and testing
 
@@ -51,14 +52,14 @@
   
   To train:
   ```bash
-  cd dataset_v50_3fps/
+  cd dataset_v52_better/
   python split_data_train_test.py
-  cd ../v50/
+  cd ../v52/
   python train_v50.py  [your_dir_to_save_the_model] --fold 1 --epoch 80 --dataset [your_dir_of_train_test_dataset]/train_test_shuf_split_v2/ --lr 0.001 --batchSize 32
   ```
   To test:
   ```bash
-  python tracklet_ID_assignment_ml_demo.py # need to manually change the directory of .pth in the script!
+  python tracklet_ID_assignment_ml_demo.py # need to manually change the directory of .pth in the script
   ```
 
   #### Bipartite Association
@@ -77,4 +78,4 @@
   * run ZedMain.m
 
 
-Vi-Fi Dataset Link: https://sites.google.com/winlab.rutgers.edu/vi-fidataset/home
+
