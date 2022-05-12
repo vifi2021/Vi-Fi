@@ -1,0 +1,2 @@
+# train on outdoor data
+python train_v52.py  /media/hans/SamsungDisk/multimodal_learning_milestones/milestone105 --fold 1 --epoch 80 --dataset /media/hans/SamsungDisk/multimodal_learning_datasets/dataset_v52_better/train_outdoor_test_split_v2/ --lr 0.001 --batchSize 32
