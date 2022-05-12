@@ -1,6 +1,7 @@
 # Vi-Fi: Associating Moving Subjects across Vision and Wireless Sensors
-Full paper (accepted by IPSN'22): https://winlab.rutgers.edu/~hansiiii/papers/ViFi_Paper___IPSN_2022__Camera_Ready_.pdf
-Vi-Fi Dataset Link: https://sites.google.com/winlab.rutgers.edu/vi-fidataset/home
+[Full paper](https://winlab.rutgers.edu/~hansiiii/papers/ViFi_Paper___IPSN_2022__Camera_Ready_.pdf) (accepted by IPSN'22)
+
+[Vi-Fi Dataset](https://sites.google.com/winlab.rutgers.edu/vi-fidataset/home)
 
 ### Directory over view:
 * data_collection_preprocessing/:
