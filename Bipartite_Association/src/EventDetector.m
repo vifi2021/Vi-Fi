@@ -1,6 +1,6 @@
 ClearExeptions
 close all
-% sequences_path = "C:/RANProject/..";
+% sequences_path = "C:/RANProject/WINLABData";
 % src_path = "C:/RANProject/src";
 
 AllIMU = {};
@@ -13,23 +13,23 @@ cd(sequences_path+"/"+subFolders(k).name)
 IMUfname = subFolders(k).name+"IMU.mat";
 AllIMU = load(IMUfname);
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-f1 = figure('name',subFolders(k).name)
-alltable = [];
 for i=1:size(AllIMU.PhoneIMUReadings,2)
     cd(src_path)
- 
-    [stepDetector,walkingFrequency] = DetectSteps(AllIMU.PhoneIMUReadings{1,i}.timestamp,AllIMU.PhoneIMUReadings{1,i}.gm);
+    
+    stepDetector = DetectSteps(AllIMU.PhoneIMUReadings{1,i}.timestamp,AllIMU.PhoneIMUReadings{1,i}.gm);
     
     cd(sequences_path+"/"+subFolders(k).name)
-   
+    
     AllIMU.PhoneIMUReadings{1,i}.stepDetector = stepDetector;
-    AllIMU.PhoneIMUReadings{1,i}.walkingFrequency = walkingFrequency;
     
     PhoneIMUReadings{1,i} = AllIMU.PhoneIMUReadings{1,i};
     
-   walkingS = find(AllIMU.PhoneIMUReadings{1,i}.stepDetector==1);
+    subplot(size(AllIMU.PhoneIMUReadings,2),1,i)
+    plot(AllIMU.PhoneIMUReadings{1,i}.timestamp, AllIMU.PhoneIMUReadings{1,i}.gm,'LineWidth',2);
+    hold on
+  
+    walkingS = find(AllIMU.PhoneIMUReadings{1,i}.stepDetector==1);
+    plot(AllIMU.PhoneIMUReadings{1,i}.timestamp(walkingS),AllIMU.PhoneIMUReadings{1,i}.gm(walkingS),'.');
 
     AllIMU.PhoneIMUReadings{1,i}.PhoneID = replace(AllIMU.PhoneIMUReadings{1,i}.PhoneID," ","");
   
